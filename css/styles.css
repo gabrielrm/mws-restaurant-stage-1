@@ -306,4 +306,7 @@ nav h1 a {
   color: #666;
   text-align: left;
 }
-
+.restaurant-reviewer {
+  font-weight: bold;
+  text-transform: uppercase;
+}
