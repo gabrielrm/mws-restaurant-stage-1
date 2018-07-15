@@ -1,2 +1,2 @@
-# ignore all .py files
+# ignore all .py files (http server)
 *.py
