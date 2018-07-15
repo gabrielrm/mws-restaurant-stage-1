@@ -97,6 +97,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
+  // ally
+  cuisine.tabIndex = 0;
+  cuisine.setAttribute("aria-label", "restaurant cuisine: " + restaurant.cuisine_type);
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -111,6 +114,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  // ally
+  hours.tabIndex = 0;
+  hours.setAttribute("aria-label", "restaurant hours");
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
@@ -135,6 +141,9 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
+  // ally
+  title.tabIndex = 0;
+  title.setAttribute("aria-label", "restaurant reviews");
   container.appendChild(title);
 
   if (!reviews) {
