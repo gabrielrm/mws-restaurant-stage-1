@@ -85,10 +85,15 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
+  // a11y
+  address.tabIndex = 0;
+  address.setAttribute("aria-label", "restaurant address: " + restaurant.address);
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  // a11y
+  image.alt = restaurant.name + " restaurant"
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -112,6 +117,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const day = document.createElement('td');
     day.innerHTML = key;
     row.appendChild(day);
+    // a11y
+    row.tabIndex = 0;
 
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
@@ -152,6 +159,9 @@ createReviewHTML = (review) => {
   name.innerHTML = review.name;
   // for css font transformation
   name.className = "restaurant-reviewer"
+  // a11y
+  li.classList.add("review-info");
+  li.tabIndex = "0";
   li.appendChild(name);
 
   const date = document.createElement('p');
